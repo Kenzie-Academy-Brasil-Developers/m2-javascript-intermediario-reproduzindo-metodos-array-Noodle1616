@@ -53,11 +53,11 @@ function callbackReduce(acumulator, valorAtual) {
 }
 
 function reduce(array, callback, initialValue = 0) {
-const imprimir = array.reduce((element, index, arr) => {
-  for(let i = 0; i < array.length; i++){
-    return callback(element, index)
-  }
-})
+  const imprimir = array.reduce((element, index, arr) => {
+    for(let i = 0; i < array.length; i++){
+      return callback(element, index)
+    }
+  })
 return imprimir + initialValue
 }
 
