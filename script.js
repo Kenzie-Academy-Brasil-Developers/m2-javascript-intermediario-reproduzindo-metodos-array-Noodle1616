@@ -8,11 +8,16 @@ function callbackMap(element, index, array) {
   return `Número ${element} no index: ${index}, veio desse array: ${array}`;
 }
 
-function map(array, callback) {
-  //sua lógica
+function map(arr, callback) {
+  const imprimir = arr.map((element, index, array) => {
+    for(let i = 0; i < arr.length; i++){
+          return callback(element, index, array)
+    }
+  })
+    return imprimir
 }
 
-//console.table(map(arrayMap, callbackMap));
+console.table(map(arrayMap, callbackMap));
 
 //Método Filter ---------
 
@@ -27,10 +32,15 @@ function callbackFilter(element, index, array) {
 }
 
 function filter(array, callback) {
-  //sua lógica
+  const imprimir = arrayFilter.filter((element, index, arr) => {
+    for(let i = 0; i < array.length; i++){
+      return callback(element, index, arr)
+    }
+  })
+  return imprimir
 }
 
-//console.log(filter(arrayFilter, callbackFilter));
+console.log(filter(arrayFilter, callbackFilter));
 
 //Método Reduce ---------
 
@@ -43,8 +53,13 @@ function callbackReduce(acumulator, valorAtual) {
 }
 
 function reduce(array, callback, initialValue = 0) {
-  //sua lógica
+const imprimir = array.reduce((element, index, arr) => {
+  for(let i = 0; i < array.length; i++){
+    return callback(element, index)
+  }
+})
+return imprimir + initialValue
 }
 
-// console.log(reduce(arrayReduce, callbackReduce));
-// console.log(reduce(arrayReduce, callbackReduce, 50));
+console.log(reduce(arrayReduce, callbackReduce));
+console.log(reduce(arrayReduce, callbackReduce, 50));
